@@ -1,5 +1,6 @@
-# Business-Unit-for-Jiyunbao organization profile
+# Business-Unit-for-Jiyunbao `.github`
 
-This repository stores the GitHub organization profile and repository map.
+Organization profile and repository map for `Business-Unit-for-Jiyunbao`.
 
-Main profile: [`profile/README.md`](profile/README.md)
+- `profile/README.md`: GitHub organization profile.
+- Keep `requirements` and `deploy` as standard entry points.
