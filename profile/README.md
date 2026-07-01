@@ -1,34 +1,24 @@
-# 集运宝业务线 / Jiyunbao
+# Business-Unit-for-Jiyunbao
 
-集运宝网站、产品入口和后续业务系统资产。
+Jiyunbao business unit organization.
+
+## Standard Repositories
+
+- [`requirements`](https://github.com/Business-Unit-for-Jiyunbao/requirements): product/business requirements, scope, workflows, acceptance criteria, and open questions.
+- [`deploy`](https://github.com/Business-Unit-for-Jiyunbao/deploy): deployment orchestration, domains, CI/CD release notes, environment mapping, and operations docs.
+- [`.github`](https://github.com/Business-Unit-for-Jiyunbao/.github): organization profile and repository map.
 
 ## Repository Map
 
-| Repository | Visibility | Purpose |
-|---|---:|---|
-| [`jiyunbao-website`](https://github.com/Business-Unit-for-Jiyunbao/jiyunbao-website) | private | Jiyunbao company website deployed to Cloudflare Pages. |
-| [`.github`](https://github.com/Business-Unit-for-Jiyunbao/.github) | public | 组织 profile 和仓库地图。 |
+Current repositories should keep this split:
 
-## Scope
-
-适合放在本组织：
-
-- 集运宝官网、产品入口、营销页和业务系统。
-- 集运宝相关需求、部署和运营材料。
-
-不适合放在本组织：
-
-- MCN/KOL、Xinliang、BidScout 等其它业务。
-- 集团级制度/组合管理，这些属于 President-Office。
+- Business application repositories own source code, tests, builds, and development docs.
+- `requirements` owns durable product/business requirements.
+- `deploy` owns deployment and operations workflows.
+- `.github` owns organization-level profile and repository map.
 
 ## Governance
 
-- 具体业务代码、部署、需求和数据资产留在本业务组织。
-- 跨 BU 的战略、组合、制度和决策进入 `President-Office`。
-- 通用工程底座、RuoYi/Yudao clone/codegen 能力进入 `Business-Unit-for-Platform`。
-- AI 平台产品和 AI infra 子域进入 `Business-Unit-for-AI-Platform`。
-- 生产部署默认按多机模式设计，数据库/缓存不以 `127.0.0.1` 作为生产默认。
-
----
-
-_Last updated: 2026-07-01_
+- Keep development and deployment separate.
+- Use GitHub Actions/CI for deployment workflows; store credentials in GitHub Actions secrets.
+- Do not commit tokens, passwords, SSH keys, customer private data, or server credentials.
